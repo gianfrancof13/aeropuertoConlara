@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\avion.png",
+      "PackagePath": "staticwebassets\\img\\avion.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -21,7 +21,7 @@ public class NoticiasSanLuisService
         var cards = doc.DocumentNode.SelectNodes("//div[contains(@class,'card') and .//h4[contains(@class,'card-title')]]");
         if (cards != null)
         {
-            foreach (var card in cards.Take(3)) // Solo las 3 primeras
+            foreach (var card in cards.Take(4)) // Solo las 4 primeras
             {
                 var linkNode = card.SelectSingleNode(".//a[contains(@href,'agenciasanluis.com') and .//h4[contains(@class,'card-title')]]");
                 var titleNode = card.SelectSingleNode(".//h4[contains(@class,'card-title')]");
@@ -31,7 +31,22 @@ public class NoticiasSanLuisService
                 {
                     var titulo = titleNode.InnerText.Trim();
                     var href = linkNode.GetAttributeValue("href", "#");
-                    noticias.Add(new NoticiaSanLuis { Titulo = titulo, Url = href, Imagen = imagen });
+
+                    // Si ya existe una noticia con el mismo título o URL y la nueva tiene imagen, reemplaza la anterior
+                    var noticiaExistente = noticias.FirstOrDefault(n => n.Titulo == titulo || n.Url == href);
+
+                    if (noticiaExistente != null)
+                    {
+                        // Si la nueva tiene imagen y la anterior no, reemplaza
+                        if (!string.IsNullOrEmpty(imagen) && string.IsNullOrEmpty(noticiaExistente.Imagen))
+                        {
+                            noticiaExistente.Imagen = imagen;
+                        }
+                    }
+                    else
+                    {
+                        noticias.Add(new NoticiaSanLuis { Titulo = titulo, Url = href, Imagen = imagen });
+                    }
                 }
             }
         }

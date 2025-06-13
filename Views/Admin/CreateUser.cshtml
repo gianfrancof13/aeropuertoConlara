@@ -1,35 +1,90 @@
 @{
     ViewData["Title"] = "Crear Usuario";
+    var esPrimerUsuario = !ViewBag.ExisteUsuario;
 }
-
-<div class="banner">
-    <h1>@ViewData["Title"]</h1>
-    <p>Complete el formulario para crear un nuevo usuario.</p>
-</div>
 
 <div class="container mt-4">
     <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">@(esPrimerUsuario ? "Crear Usuario Administrador Inicial" : "Crear Nuevo Usuario")
+                    </h4>
+                </div>
                 <div class="card-body">
-                    <form method="post" action="@Url.Action("CreateUser", "Admin")">
-                        <div class="mb-3">
-                            <label for="usuario" class="form-label">Usuario</label>
-                            <input type="text" class="form-control" id="usuario" name="usuario" required>
+                    @if (esPrimerUsuario)
+                    {
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle me-2"></i>
+                            Estás creando el primer usuario administrador del sistema.
                         </div>
+                    }
+
+                    @if (!ViewData.ModelState.IsValid)
+                    {
+                        <div class="alert alert-danger">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                        </div>
+                    }
+
+                    <form asp-action="CreateUser" method="post">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de Usuario</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+
                         <div class="mb-3">
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
+
                         <div class="mb-3">
                             <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
                             <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
                                 required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+
+                        @if (!esPrimerUsuario)
+                        {
+                            <div class="mb-3">
+                                <label for="rol" class="form-label">Rol</label>
+                                <select class="form-select" id="rol" name="rol" required>
+                                    <option value="">Seleccione un rol</option>
+                                    <option value="Admin">Administrador</option>
+                                    <option value="User">Usuario</option>
+                                </select>
+                            </div>
+                        }
+
+                        <div class="d-flex justify-content-between">
+                            @if (!esPrimerUsuario)
+                            {
+                                <a href="/Admin/Panel" class="btn btn-secondary">
+                                    <i class="fas fa-arrow-left me-2"></i>Volver al Panel
+                                </a>
+                            }
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-user-plus me-2"></i>Crear Usuario
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        // Validación del formulario
+        document.querySelector('form').addEventListener('submit', function (e) {
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                e.preventDefault();
+                alert('Las contraseñas no coinciden');
+            }
+        });
+    </script>
+}

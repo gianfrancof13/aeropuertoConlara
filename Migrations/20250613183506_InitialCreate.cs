@@ -57,10 +57,10 @@ namespace AeropuertoConlara.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ClaveHash = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Rol = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NombreUsuario = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Rol = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    FechaCreacion = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -73,17 +73,24 @@ namespace AeropuertoConlara.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Aerolinea = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NumeroVuelo = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Destino = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FechaHora = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UltimaActualizacion = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    HoraArribo = table.Column<TimeSpan>(type: "time", nullable: false),
+                    HoraPartida = table.Column<TimeSpan>(type: "time", nullable: false),
+                    Ruta = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Equipo = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TA = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Vuelos", x => x.Id);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Usuarios_NombreUsuario",
+                table: "Usuarios",
+                column: "NombreUsuario",
+                unique: true);
         }
 
         /// <inheritdoc />

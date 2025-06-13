@@ -3,12 +3,18 @@
     ViewData["Title"] = "Bienvenido al Aeropuerto Conlara";
 }
 
-<div class="banner">
-    <div><strong>Aeropuerto Internacional Valle del Conlara</strong></div>
-    <div style="font-size:1rem; font-weight:400; margin-top:0.5rem;">Operando desde 2001 - Uno de los más modernos del
-        país</div>
-    <div style="font-size:1rem; font-weight:400;">A 18km de Villa de Merlo - Terminal con tecnología de última
-        generación</div>
+<div class="banner"
+    style="background-image: url('/img/avion.png'); background-size: cover; background-position: center; background-repeat: no-repeat; position: relative; padding: 3rem 2rem;">
+    <div
+        style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));">
+    </div>
+    <div style="position: relative; z-index: 1; color: white; text-align: center;">
+        <div><strong style="font-size: 2.5rem;">Aeropuerto Internacional Valle del Conlara</strong></div>
+        <div style="font-size:1.2rem; font-weight:400; margin-top:1rem;">Operando desde 2001 - Uno de los más modernos
+            del país</div>
+        <div style="font-size:1.2rem; font-weight:400;">A 18km de Villa de Merlo - Terminal con tecnología de última
+            generación</div>
+    </div>
 </div>
 
 <section class="vuelos-table-section">
@@ -16,51 +22,53 @@
     <table class="vuelos-table">
         <thead>
             <tr>
-                <th>Aerolínea</th>
+                <th>Ruta</th>
                 <th>Vuelo</th>
-                <th>Destino</th>
-                <th>Horario</th>
-                <th>Estado</th>
+                <th>Hora de Arribo</th>
+                <th>Hora de Partida</th>
+                <th>Fecha</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var vuelo in Model)
             {
                 <tr>
-                    <td>@vuelo.Aerolinea</td>
+                    <td>@vuelo.Ruta</td>
                     <td>@vuelo.NumeroVuelo</td>
-                    <td>@vuelo.Destino</td>
-                    <td>@vuelo.FechaHora.ToString("HH:mm")</td>
-                    <td>@vuelo.Estado</td>
+                    <td>@vuelo.HoraArribo.ToString(@"hh\:mm")</td>
+                    <td>@vuelo.HoraPartida.ToString(@"hh\:mm")</td>
+                    <td>@vuelo.Fecha.ToString("dd/MM/yyyy")</td>
                 </tr>
             }
         </tbody>
     </table>
 </section>
 
-<section class="quick-access">
-    <div class="access-card gradient-purple" data-bs-toggle="modal" data-bs-target="#sobreAeropuertoModal">
-        <div class="access-link-container">
-            <i class="fas fa-plane-departure me-2"></i>
-            <a class="access-link">Sobre el Aeropuerto</a>
+<section class="quick-access" style="position: relative;">
+    <div style="position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 1rem; padding: 1rem;">
+        <div class="access-card gradient-purple" data-bs-toggle="modal" data-bs-target="#sobreAeropuertoModal">
+            <div class="access-link-container">
+                <i class="fas fa-plane-departure me-2"></i>
+                <a class="access-link">Sobre el Aeropuerto</a>
+            </div>
         </div>
-    </div>
-    <div class="access-card gradient-green" data-bs-toggle="modal" data-bs-target="#serviciosAerocomercialesModal">
-        <div class="access-link-container">
-            <i class="fas fa-concierge-bell me-2"></i>
-            <a class="access-link">Servicios aerocomerciales</a>
+        <div class="access-card gradient-green" data-bs-toggle="modal" data-bs-target="#serviciosAerocomercialesModal">
+            <div class="access-link-container">
+                <i class="fas fa-concierge-bell me-2"></i>
+                <a class="access-link">Servicios aerocomerciales</a>
+            </div>
         </div>
-    </div>
-    <div class="access-card gradient-orange" data-bs-toggle="modal" data-bs-target="#datosAeronauticosModal">
-        <div class="access-link-container">
-            <i class="fas fa-info-circle me-2"></i>
-            <a class="access-link">Datos aeronáuticos</a>
+        <div class="access-card gradient-orange" data-bs-toggle="modal" data-bs-target="#datosAeronauticosModal">
+            <div class="access-link-container">
+                <i class="fas fa-info-circle me-2"></i>
+                <a class="access-link">Datos aeronáuticos</a>
+            </div>
         </div>
-    </div>
-    <div class="access-card gradient-teal" data-bs-toggle="modal" data-bs-target="#localesModal">
-        <div class="access-link-container">
-            <i class="fas fa-building me-2"></i>
-            <a class="access-link">SNA y EDA</a>
+        <div class="access-card gradient-teal" data-bs-toggle="modal" data-bs-target="#localesModal">
+            <div class="access-link-container">
+                <i class="fas fa-building me-2"></i>
+                <a class="access-link">SNA y EDA</a>
+            </div>
         </div>
     </div>
 </section>
@@ -152,26 +160,48 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+                <h6 style="color:#1976d2; font-weight:600; margin-bottom:1rem;">Información General</h6>
                 <ul style="padding-left: 1.2rem;">
-                    <li>Posición Satelital: 32°23'04"S 65°11'09"W (4,5 km SSE)</li>
-                    <li>Elevación de pista Santa Rosa de Conlara: 616 m s. n. m. (2021 ft)</li>
-                    <li>Pistas: dirección 02/20</li>
-                    <li>ILE RWY: iluminación y balizamiento</li>
-                    <li>Dimensión de pista: 2550 x 45 m (Hormigón) 63t/2 110t/4 170t/5</li>
-                    <li>ATS: PPAL 119,95 MHz | Aux. 118,85 MHz | EMERG 121,50 MHz | A/G PRINCIPAL 122,10 | A/G Aux.
-                        122,65 MHz</li>
-                    <li>Radio ayudas: VOR/DME SRC 117,5 MHz (32°22'25"S – 65°11'00"W), canal 122 x</li>
-                    <li>Servicios: combustible JET A-1 a requerimiento, 5 días de antelación</li>
-                    <li>Obstáculos: antena telefónica con iluminación 2187 pies (32°20'05"S 62°12'05"W)</li>
-                    <li>TMA: con un arco de 12 NM</li>
-                    <li>70 nivel mínimo utilizable 085 obstáculos naturales</li>
-                    <li>Horario de servicio del aeródromo: 8:00 a 15:00</li>
+                    <li>Ubicación: 32°23'04"S 65°11'09"W (4,5 km SSE)</li>
+                    <li>Elevación: 616 metros sobre nivel del mar (2021 pies)</li>
                 </ul>
-                <div style="margin-top:1.5rem;">
-                    <strong>REM - Red de Estaciones Meteorológicas</strong><br />
-                    <span>El aeropuerto posee antena de meteorología provincial.</span><br />
-                    <a href="https://clima.sanluis.gob.ar/" target="_blank" class="btn btn-primary mt-2">Ver estación
-                        meteorológica</a>
+
+                <h6 style="color:#1976d2; font-weight:600; margin: 1rem 0;">Características de Pista</h6>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Orientación: 02/20</li>
+                    <li>Dimensiones: 2550 x 45 metros (Hormigón)</li>
+                    <li>Capacidad de carga: 63t/2 - 110t/4 - 170t/5</li>
+                    <li>Sistema de iluminación: ILE RWY con balizamiento</li>
+                </ul>
+
+                <h6 style="color:#1976d2; font-weight:600; margin: 1rem 0;">Comunicaciones y Navegación</h6>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Frecuencias ATS:</li>
+                    <ul style="padding-left: 1.2rem;">
+                        <li>Principal: 119,95 MHz</li>
+                        <li>Auxiliar: 118,85 MHz</li>
+                        <li>Emergencia: 121,50 MHz</li>
+                        <li>A/G Principal: 122,10 MHz</li>
+                        <li>A/G Auxiliar: 122,65 MHz</li>
+                    </ul>
+                    <li>VOR/DME SRC: 117,5 MHz (32°22'25"S – 65°11'00"W), canal 122x</li>
+                </ul>
+
+                <h6 style="color:#1976d2; font-weight:600; margin: 1rem 0;">Servicios e Información Operativa</h6>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Horario operativo: 8:00 a 15:00</li>
+                    <li>Combustible: JET A-1 (solicitar con 5 días de anticipación)</li>
+                    <li>TMA: arco de 12 millas náuticas</li>
+                    <li>Nivel mínimo utilizable: 085 (obstáculos naturales)</li>
+                    <li>Obstáculo principal: antena telefónica iluminada a 2187 pies (32°20'05"S 62°12'05"W)</li>
+                </ul>
+
+                <div style="margin-top:1.5rem; background:#f5f5f5; padding:1rem; border-radius:8px;">
+                    <h6 style="color:#1976d2; font-weight:600; margin-bottom:0.5rem;">Estación Meteorológica</h6>
+                    <p style="margin-bottom:1rem;">El aeropuerto cuenta con una antena de meteorología provincial
+                        integrada a la Red de Estaciones Meteorológicas (REM).</p>
+                    <a href="https://clima.sanluis.gob.ar/" target="_blank" class="btn btn-primary">Ver datos
+                        meteorológicos en vivo</a>
                 </div>
             </div>
         </div>

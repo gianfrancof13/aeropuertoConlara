@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "2RH8Um8kbGuqPOSwKASEkiHXuEoWJHsOmYguWJMTNEo=",
+  "Hash": "7TSLfktjVMVzaz1rW2+JLYiCUlTbl8w2P+i3h3wQmm0=",
   "Source": "AeropuertoConlara",
   "BasePath": "_content/AeropuertoConlara",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "r60kjc0cel",
-      "Integrity": "DR9OX6A1Zq3KU80OFHqHhBew+KZGz7UEDOwGUunBV5c=",
+      "Fingerprint": "m4xjy3b48z",
+      "Integrity": "dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\avion.png",
+      "SourceId": "AeropuertoConlara",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\",
+      "BasePath": "_content/AeropuertoConlara",
+      "RelativePath": "img/avion#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "6oc06ngyey",
+      "Integrity": "2r0lN8mR0CGyJE7hRFIV7kyo5XvHNBPlDWU7EMXmOpE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\avion.png"
+    },
+    {
+      "Identity": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\logo.png",
+      "SourceId": "AeropuertoConlara",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\",
+      "BasePath": "_content/AeropuertoConlara",
+      "RelativePath": "img/logo#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "gu72rebiws",
+      "Integrity": "OLfQ4WWptTIBa7h8Vw9cmBj0pu5HuWVmFB8usU92reI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo.png"
     },
     {
       "Identity": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\js\\site.js",
@@ -1495,7 +1537,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6395"
+          "Value": "6718"
         },
         {
           "Name": "Content-Type",
@@ -1503,11 +1545,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"DR9OX6A1Zq3KU80OFHqHhBew+KZGz7UEDOwGUunBV5c=\""
+          "Value": "\"dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 15:31:18 GMT"
+          "Value": "Fri, 13 Jun 2025 16:59:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1517,12 +1559,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-DR9OX6A1Zq3KU80OFHqHhBew+KZGz7UEDOwGUunBV5c="
+          "Value": "sha256-dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck="
         }
       ]
     },
     {
-      "Route": "css/site.r60kjc0cel.css",
+      "Route": "css/site.m4xjy3b48z.css",
       "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -1532,7 +1574,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6395"
+          "Value": "6718"
         },
         {
           "Name": "Content-Type",
@@ -1540,11 +1582,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"DR9OX6A1Zq3KU80OFHqHhBew+KZGz7UEDOwGUunBV5c=\""
+          "Value": "\"dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 15:31:18 GMT"
+          "Value": "Fri, 13 Jun 2025 16:59:46 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1554,7 +1596,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "r60kjc0cel"
+          "Value": "m4xjy3b48z"
         },
         {
           "Name": "label",
@@ -1562,7 +1604,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-DR9OX6A1Zq3KU80OFHqHhBew+KZGz7UEDOwGUunBV5c="
+          "Value": "sha256-dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck="
         }
       ]
     },
@@ -1645,6 +1687,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "img/avion.6oc06ngyey.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\avion.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1216906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2r0lN8mR0CGyJE7hRFIV7kyo5XvHNBPlDWU7EMXmOpE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:29:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6oc06ngyey"
+        },
+        {
+          "Name": "label",
+          "Value": "img/avion.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2r0lN8mR0CGyJE7hRFIV7kyo5XvHNBPlDWU7EMXmOpE="
+        }
+      ]
+    },
+    {
+      "Route": "img/avion.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\avion.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1216906"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2r0lN8mR0CGyJE7hRFIV7kyo5XvHNBPlDWU7EMXmOpE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:29:51 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2r0lN8mR0CGyJE7hRFIV7kyo5XvHNBPlDWU7EMXmOpE="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.gu72rebiws.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OLfQ4WWptTIBa7h8Vw9cmBj0pu5HuWVmFB8usU92reI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:37:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gu72rebiws"
+        },
+        {
+          "Name": "label",
+          "Value": "img/logo.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-OLfQ4WWptTIBa7h8Vw9cmBj0pu5HuWVmFB8usU92reI="
+        }
+      ]
+    },
+    {
+      "Route": "img/logo.png",
+      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\img\\logo.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20604"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"OLfQ4WWptTIBa7h8Vw9cmBj0pu5HuWVmFB8usU92reI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 13 Jun 2025 16:37:14 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-OLfQ4WWptTIBa7h8Vw9cmBj0pu5HuWVmFB8usU92reI="
         }
       ]
     },

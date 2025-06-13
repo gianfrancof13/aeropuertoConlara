@@ -1,15 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using AeropuertoConlara.Models;
-using AeropuertoConlara.Data;
-using System.Threading.Tasks;
-using System.Linq;
 using Microsoft.EntityFrameworkCore;
-using System;
+using AeropuertoConlara.Data;
+using AeropuertoConlara.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace AeropuertoConlara.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "Admin")]
     public class VuelosController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,35 +16,26 @@ namespace AeropuertoConlara.Controllers
             _context = context;
         }
 
-        // GET: Vuelos
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Vuelos.OrderByDescending(v => v.FechaHora).ToListAsync());
+            var vuelos = await _context.Vuelos
+                .OrderBy(v => v.Fecha)
+                .ThenBy(v => v.HoraArribo)
+                .ToListAsync();
+            return View(vuelos);
         }
 
-        // GET: Vuelos/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null) return NotFound();
-            var vuelo = await _context.Vuelos.FirstOrDefaultAsync(m => m.Id == id);
-            if (vuelo == null) return NotFound();
-            return View(vuelo);
-        }
-
-        // GET: Vuelos/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Vuelos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Aerolinea,NumeroVuelo,Destino,FechaHora,Estado")] Vuelo vuelo)
+        public async Task<IActionResult> Create(Vuelo vuelo)
         {
             if (ModelState.IsValid)
             {
-                vuelo.UltimaActualizacion = DateTime.Now;
                 _context.Add(vuelo);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -55,51 +43,70 @@ namespace AeropuertoConlara.Controllers
             return View(vuelo);
         }
 
-        // GET: Vuelos/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null) return NotFound();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
             var vuelo = await _context.Vuelos.FindAsync(id);
-            if (vuelo == null) return NotFound();
+            if (vuelo == null)
+            {
+                return NotFound();
+            }
             return View(vuelo);
         }
 
-        // POST: Vuelos/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Aerolinea,NumeroVuelo,Destino,FechaHora,Estado,UltimaActualizacion")] Vuelo vuelo)
+        public async Task<IActionResult> Edit(int id, Vuelo vuelo)
         {
-            if (id != vuelo.Id) return NotFound();
+            if (id != vuelo.Id)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
                 try
                 {
-                    vuelo.UltimaActualizacion = DateTime.Now;
                     _context.Update(vuelo);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_context.Vuelos.Any(e => e.Id == vuelo.Id))
+                    if (!VueloExists(vuelo.Id))
+                    {
                         return NotFound();
+                    }
                     else
+                    {
                         throw;
+                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
             return View(vuelo);
         }
 
-        // GET: Vuelos/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null) return NotFound();
-            var vuelo = await _context.Vuelos.FirstOrDefaultAsync(m => m.Id == id);
-            if (vuelo == null) return NotFound();
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var vuelo = await _context.Vuelos
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (vuelo == null)
+            {
+                return NotFound();
+            }
+
             return View(vuelo);
         }
 
-        // POST: Vuelos/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -108,9 +115,15 @@ namespace AeropuertoConlara.Controllers
             if (vuelo != null)
             {
                 _context.Vuelos.Remove(vuelo);
-                await _context.SaveChangesAsync();
             }
+
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool VueloExists(int id)
+        {
+            return _context.Vuelos.Any(e => e.Id == id);
         }
     }
 }

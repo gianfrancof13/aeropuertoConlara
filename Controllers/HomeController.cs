@@ -23,7 +23,7 @@ namespace AeropuertoConlara.Controllers
         public async Task<IActionResult> Index()
         {
             // Tomar los 6 vuelos más próximos ordenados por FechaHora
-            var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.FechaHora).Take(6).ToList());
+            var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.Fecha).Take(6).ToList());
 
             var noticiasService = new NoticiasSanLuisService();
             var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();

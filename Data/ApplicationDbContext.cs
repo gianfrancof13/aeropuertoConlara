@@ -14,5 +14,15 @@ namespace AeropuertoConlara.Data
         public DbSet<Vuelo> Vuelos { get; set; }
         public DbSet<FormularioCIVSL> FormulariosCIVSL { get; set; }
         public DbSet<FormularioCIVConlara> FormulariosCIVConlara { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // Configurar el modelo de Usuario
+            modelBuilder.Entity<Usuario>()
+                .HasIndex(u => u.NombreUsuario)
+                .IsUnique();
+        }
     }
 }

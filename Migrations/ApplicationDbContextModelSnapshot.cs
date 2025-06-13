@@ -116,23 +116,27 @@ namespace AeropuertoConlara.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ClaveHash")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("NombreUsuario")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("Nombre")
+                    b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Rol")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("NombreUsuario")
+                        .IsUnique();
 
                     b.ToTable("Usuarios");
                 });
@@ -145,27 +149,30 @@ namespace AeropuertoConlara.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Aerolinea")
+                    b.Property<string>("Equipo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Destino")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Estado")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FechaHora")
+                    b.Property<DateTime>("Fecha")
                         .HasColumnType("datetime2");
+
+                    b.Property<TimeSpan>("HoraArribo")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("HoraPartida")
+                        .HasColumnType("time");
 
                     b.Property<string>("NumeroVuelo")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UltimaActualizacion")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Ruta")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TA")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
