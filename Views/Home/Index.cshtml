@@ -1,0 +1,235 @@
+﻿@model IEnumerable<AeropuertoConlara.Models.Vuelo>
+@{
+    ViewData["Title"] = "Bienvenido al Aeropuerto Conlara";
+}
+
+<div class="banner">
+    <div><strong>Aeropuerto Internacional Valle del Conlara</strong></div>
+    <div style="font-size:1rem; font-weight:400; margin-top:0.5rem;">Operando desde 2001 - Uno de los más modernos del
+        país</div>
+    <div style="font-size:1rem; font-weight:400;">A 18km de Villa de Merlo - Terminal con tecnología de última
+        generación</div>
+</div>
+
+<section class="vuelos-table-section">
+    <h2>Partidas</h2>
+    <table class="vuelos-table">
+        <thead>
+            <tr>
+                <th>Aerolínea</th>
+                <th>Vuelo</th>
+                <th>Destino</th>
+                <th>Horario</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vuelo in Model)
+            {
+                <tr>
+                    <td>@vuelo.Aerolinea</td>
+                    <td>@vuelo.NumeroVuelo</td>
+                    <td>@vuelo.Destino</td>
+                    <td>@vuelo.FechaHora.ToString("HH:mm")</td>
+                    <td>@vuelo.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>
+
+<section class="quick-access">
+    <div class="access-card" data-bs-toggle="modal" data-bs-target="#sobreAeropuertoModal">
+        <div class="access-link-container">
+            <a class="access-link">Sobre el Aeropuerto</a>
+        </div>
+    </div>
+    <div class="access-card" data-bs-toggle="modal" data-bs-target="#serviciosAerocomercialesModal">
+        <div class="access-link-container">
+            <a class="access-link">Servicios aerocomerciales</a>
+        </div>
+    </div>
+    <div class="access-card" data-bs-toggle="modal" data-bs-target="#datosAeronauticosModal">
+        <div class="access-link-container">
+            <a class="access-link">Datos aeronáuticos</a>
+        </div>
+    </div>
+    <div class="access-card" data-bs-toggle="modal" data-bs-target="#localesModal">
+        <div class="access-link-container">
+            <a class="access-link">SNA y EDA</a>
+        </div>
+    </div>
+</section>
+
+<!-- Modales -->
+<div class="modal fade" id="sobreAeropuertoModal" tabindex="-1" aria-labelledby="sobreAeropuertoModalLabel"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content"
+            style="border-radius: 16px; border: none; box-shadow: 0 10px 40px rgba(21, 58, 91, 0.2);">
+            <div class="modal-header"
+                style="background: linear-gradient(90deg, #1976d2 0%, #4fc3f7 100%); color: white; border: none; border-radius: 16px 16px 0 0; padding: 1.5rem;">
+                <h5 class="modal-title" id="sobreAeropuertoModalLabel" style="font-size: 1.5rem; font-weight: 600;">
+                    <i class="fas fa-plane-departure me-2"></i>
+                    Sobre el Aeropuerto
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="padding: 2rem; font-size: 1.1rem; line-height: 1.6;">
+                <div
+                    style="background: #f8f9fa; border-left: 4px solid #1976d2; padding: 1rem; margin-bottom: 1.5rem; border-radius: 0 8px 8px 0;">
+                    <strong style="color: #1976d2;">Aeropuerto Internacional Valle del Conlara</strong><br>
+                    <span style="color: #666;">IATA: RLO - OACI: SAOS - FAA: SRC</span>
+                </div>
+
+                <p style="margin-bottom: 1rem;">
+                    El aeropuerto se encuentra ubicado en el valle del Conlara a 18 km al sudoeste de Merlo,
+                    la tercera ciudad de la provincia de San Luis, Argentina.
+                </p>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0;">
+                    <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px;">
+                        <h6 style="color: #1976d2; font-weight: 600; margin-bottom: 0.5rem;">Infraestructura</h6>
+                        <p style="margin: 0;">Terminal con manga de embarque y pista de hormigón de 2550m x 45m</p>
+                    </div>
+                    <div style="background: #e3f2fd; padding: 1rem; border-radius: 8px;">
+                        <h6 style="color: #1976d2; font-weight: 600; margin-bottom: 0.5rem;">Ubicación</h6>
+                        <p style="margin: 0;">Ruta Nacional 148 - Predio de 400 hectáreas</p>
+                    </div>
+                </div>
+
+                <p style="margin-bottom: 0;">
+                    En 2013 recibió una autobomba de última generación que permitió ascender a categoría 5 de la OACI.
+                    Desde 2014 se realizaron obras de ampliación y en septiembre de 2022 comenzó a recibir vuelos
+                    regulares
+                    de Aerolíneas Argentinas.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="serviciosAerocomercialesModal" tabindex="-1"
+    aria-labelledby="serviciosAerocomercialesModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="serviciosAerocomercialesModalLabel">Servicios aerocomerciales</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6 class="mb-3" style="color:#1976d2; font-weight:600;">Servicios aerocomerciales</h6>
+                <ul style="padding-left: 1.2rem;">
+                    <li>Administración, control y explotación EDA (Ente Desarrollo Aeronáutico)</li>
+                    <li>Control de Aduanas</li>
+                    <li>Control de Migraciones</li>
+                    <li>Control de la Policía de Seguridad Aeroportuaria</li>
+                    <li>Policía de la Provincia de San Luis</li>
+                    <li>Seguridad de EDA (Ente Desarrollo Aeronáutico)</li>
+                    <li>Bomberos Aeroportuarios</li>
+                    <li>Sanidad Aeroportuaria</li>
+                    <li>ANAC - Administración Nacional de Aviación Civil</li>
+                    <li>SENASA (Control Fitosanitario) - Servicio Nacional de Sanidad y Calidad Agroalimentaria</li>
+                    <li>Servicio Meteorológico Nacional Argentino</li>
+                    <li>MNLIF – Manejo Nacional de Lucha Incendios Forestales</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="datosAeronauticosModal" tabindex="-1" aria-labelledby="datosAeronauticosModalLabel"
+    aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="datosAeronauticosModalLabel">Datos aeronáuticos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul style="padding-left: 1.2rem;">
+                    <li>Posición Satelital: 32°23'04"S 65°11'09"W (4,5 km SSE)</li>
+                    <li>Elevación de pista Santa Rosa de Conlara: 616 m s. n. m. (2021 ft)</li>
+                    <li>Pistas: dirección 02/20</li>
+                    <li>ILE RWY: iluminación y balizamiento</li>
+                    <li>Dimensión de pista: 2550 x 45 m (Hormigón) 63t/2 110t/4 170t/5</li>
+                    <li>ATS: PPAL 119,95 MHz | Aux. 118,85 MHz | EMERG 121,50 MHz | A/G PRINCIPAL 122,10 | A/G Aux.
+                        122,65 MHz</li>
+                    <li>Radio ayudas: VOR/DME SRC 117,5 MHz (32°22'25"S – 65°11'00"W), canal 122 x</li>
+                    <li>Servicios: combustible JET A-1 a requerimiento, 5 días de antelación</li>
+                    <li>Obstáculos: antena telefónica con iluminación 2187 pies (32°20'05"S 62°12'05"W)</li>
+                    <li>TMA: con un arco de 12 NM</li>
+                    <li>70 nivel mínimo utilizable 085 obstáculos naturales</li>
+                    <li>Horario de servicio del aeródromo: 8:00 a 15:00</li>
+                </ul>
+                <div style="margin-top:1.5rem;">
+                    <strong>REM - Red de Estaciones Meteorológicas</strong><br />
+                    <span>El aeropuerto posee antena de meteorología provincial.</span><br />
+                    <a href="https://clima.sanluis.gob.ar/" target="_blank" class="btn btn-primary mt-2">Ver estación
+                        meteorológica</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="localesModal" tabindex="-1" aria-labelledby="localesModalLabel" aria-hidden="true"
+    style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="localesModalLabel">Sistema Nacional de Aeropuertos y EDA</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h6 style="color:#1976d2; font-weight:600;">¿Qué es pertenecer al SNA?</h6>
+                <p>El Sistema Nacional de Aeropuertos (SNA) es la red de aeropuertos regulados y supervisados por el
+                    Estado argentino, que garantiza infraestructura y servicios de calidad para todos los pasajeros y
+                    usuarios.</p>
+                <h6 style="color:#1976d2; font-weight:600;">Regulación y ORSNA</h6>
+                <p>El aeropuerto está regulado por el Organismo Regulador del Sistema Nacional de Aeropuertos (ORSNA),
+                    una organización descentralizada del Estado argentino creada en 1997 (Decreto N.º 375/97). Su misión
+                    es impulsar el desarrollo de los aeropuertos integrantes del SNA, promoviendo infraestructura y
+                    servicios de calidad.</p>
+                <h6 style="color:#1976d2; font-weight:600;">Historia del EDA</h6>
+                <p>El Ente de Desarrollo Aeronáutico (EDA) es el explotador y administrador del Aeropuerto Valle del
+                    Conlara, encargado de su organización y desarrollo operativo.</p>
+                <h6 style="color:#1976d2; font-weight:600;">Vuelos de Aerolíneas Argentinas</h6>
+                <p>El aeropuerto cuenta con vuelos de Aerolíneas Argentinas. Para información actualizada de horarios y
+                    compra de pasajes, se recomienda utilizar la <a href="https://www.aerolineas.com.ar/app"
+                        target="_blank">APP de Aerolíneas Argentinas</a> o consultar en el propio aeropuerto.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="novedades-section">
+    <h2>Novedades</h2>
+    <div class="novedades-cards">
+        <div class="novedad-card">
+            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+                alt="Novedad 1" />
+            <div class="novedad-content">
+                <div class="novedad-title">Nueva ruta internacional</div>
+                <div class="novedad-text">Desde julio, vuelos directos a Santiago de Chile.</div>
+            </div>
+        </div>
+        <div class="novedad-card">
+            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80"
+                alt="Novedad 2" />
+            <div class="novedad-content">
+                <div class="novedad-title">Renovación de salas VIP</div>
+                <div class="novedad-text">Disfrutá de mayor confort y servicios exclusivos.</div>
+            </div>
+        </div>
+        <div class="novedad-card">
+            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
+                alt="Novedad 3" />
+            <div class="novedad-content">
+                <div class="novedad-title">Nuevo sistema de estacionamiento</div>
+                <div class="novedad-text">Más rápido, seguro y con pago digital.</div>
+            </div>
+        </div>
+    </div>
+</section>

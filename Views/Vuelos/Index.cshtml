@@ -1,0 +1,31 @@
+@model IEnumerable<AeropuertoConlara.Models.Vuelo>
+@{
+    ViewData["Title"] = "Listado de Vuelos";
+}
+
+<h1>@ViewData["Title"]</h1>
+<section class="vuelos-table-section">
+    <table class="vuelos-table">
+        <thead>
+            <tr>
+                <th>Aerolínea</th>
+                <th>Vuelo</th>
+                <th>Destino</th>
+                <th>Horario</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vuelo in Model)
+            {
+                <tr>
+                    <td>@vuelo.Aerolinea</td>
+                    <td>@vuelo.NumeroVuelo</td>
+                    <td>@vuelo.Destino</td>
+                    <td>@vuelo.FechaHora.ToString("HH:mm")</td>
+                    <td>@vuelo.Estado</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</section>

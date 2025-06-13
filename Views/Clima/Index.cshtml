@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Estado del clima";
+}
+
+<div class="banner">
+    <h1>@ViewData["Title"]</h1>
+</div>
+
+<div class="clima-iframe-container" style="width: 100%; height: 800px; margin: 20px 0;">
+    <iframe src="https://clima.sanluis.gob.ar/" style="width: 100%; height: 100%; border: none;" title="Clima San Luis">
+    </iframe>
+</div>
