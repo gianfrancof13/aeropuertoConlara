@@ -4,25 +4,25 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AeropuertoConlara.ssj3tn4bml.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 13:02:30 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 15:42:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AeropuertoConlara/AeropuertoConlara.ssj3tn4bml.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\AeropuertoConlara.ssj3tn4bml.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ssj3tn4bml"},{"Name":"integrity","Value":"sha256-/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4="},{"Name":"label","Value":"_content/AeropuertoConlara/AeropuertoConlara.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 13:02:30 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1135"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022/H8xxnXnvCdy\u002Bd2CtkmrQ6thZS\u002Bc9kSvv67cRDuqfN4=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 15:42:11 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AeropuertoConlara/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fT9xrAJQ0k4QOZLm/EvgjZnsCind5bI99ccrVdvhWCg="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6011"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fT9xrAJQ0k4QOZLm/EvgjZnsCind5bI99ccrVdvhWCg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 14:59:07 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DR9OX6A1Zq3KU80OFHqHhBew\u002BKZGz7UEDOwGUunBV5c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6395"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022DR9OX6A1Zq3KU80OFHqHhBew\u002BKZGz7UEDOwGUunBV5c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 15:31:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/AeropuertoConlara/css/site.dwna888kyo.css">
+    <StaticWebAssetEndpoint Include="_content/AeropuertoConlara/css/site.r60kjc0cel.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dwna888kyo"},{"Name":"integrity","Value":"sha256-fT9xrAJQ0k4QOZLm/EvgjZnsCind5bI99ccrVdvhWCg="},{"Name":"label","Value":"_content/AeropuertoConlara/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6011"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fT9xrAJQ0k4QOZLm/EvgjZnsCind5bI99ccrVdvhWCg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 14:59:07 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"r60kjc0cel"},{"Name":"integrity","Value":"sha256-DR9OX6A1Zq3KU80OFHqHhBew\u002BKZGz7UEDOwGUunBV5c="},{"Name":"label","Value":"_content/AeropuertoConlara/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6395"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022DR9OX6A1Zq3KU80OFHqHhBew\u002BKZGz7UEDOwGUunBV5c=\u0022"},{"Name":"Last-Modified","Value":"Fri, 13 Jun 2025 15:31:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/AeropuertoConlara/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

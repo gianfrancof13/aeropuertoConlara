@@ -3,6 +3,8 @@ using AeropuertoConlara.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using System.Linq;
 
 namespace AeropuertoConlara.Controllers
 {
@@ -15,7 +17,7 @@ namespace AeropuertoConlara.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var vuelos = new List<Vuelo>
             {
@@ -23,6 +25,10 @@ namespace AeropuertoConlara.Controllers
                 new Vuelo { Id = 2, Aerolinea = "Flybondi", NumeroVuelo = "FO5678", Destino = "Córdoba", FechaHora = System.DateTime.Now.AddHours(2), Estado = "Demorado" },
                 new Vuelo { Id = 3, Aerolinea = "JetSMART", NumeroVuelo = "JS9101", Destino = "Mendoza", FechaHora = System.DateTime.Now.AddHours(3), Estado = "Aterrizado" }
             };
+
+            var noticiasService = new NoticiasSanLuisService();
+            var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
+            ViewBag.NoticiasSanLuis = noticias;
             return View(vuelos);
         }
 
@@ -36,5 +42,6 @@ namespace AeropuertoConlara.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }

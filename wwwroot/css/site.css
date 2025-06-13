@@ -331,3 +331,23 @@ footer {
   left: 0;
   right: 0;
 }
+
+.noticias-sanluis-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+}
+.noticias-sanluis-list li {
+  margin-bottom: 0.7rem;
+  font-size: 1.08rem;
+}
+.noticias-sanluis-list a {
+  color: #1976d2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.noticias-sanluis-list a:hover {
+  color: #4fc3f7;
+  text-decoration: underline;
+}

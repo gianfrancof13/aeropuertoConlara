@@ -204,32 +204,27 @@
     </div>
 </div>
 
-<section class="novedades-section">
-    <h2>Novedades</h2>
-    <div class="novedades-cards">
-        <div class="novedad-card">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
-                alt="Novedad 1" />
-            <div class="novedad-content">
-                <div class="novedad-title">Nueva ruta internacional</div>
-                <div class="novedad-text">Desde julio, vuelos directos a Santiago de Chile.</div>
-            </div>
+@if (ViewBag.NoticiasSanLuis != null && ((List<NoticiaSanLuis>)ViewBag.NoticiasSanLuis).Any())
+{
+    <section class="novedades-section">
+        <h2>Noticias Aeropuertos de San Luis</h2>
+        <div class="novedades-cards">
+            @foreach (var noticia in (List<NoticiaSanLuis>)ViewBag.NoticiasSanLuis)
+            {
+                <div class="novedad-card">
+                    @if (!string.IsNullOrEmpty(noticia.Imagen))
+                    {
+                        <img src="@noticia.Imagen" alt="@noticia.Titulo" />
+                    }
+                    <div class="novedad-content">
+                        <div class="novedad-title">
+                            <a href="@noticia.Url" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">
+                                @noticia.Titulo
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
-        <div class="novedad-card">
-            <img src="https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=600&q=80"
-                alt="Novedad 2" />
-            <div class="novedad-content">
-                <div class="novedad-title">Renovación de salas VIP</div>
-                <div class="novedad-text">Disfrutá de mayor confort y servicios exclusivos.</div>
-            </div>
-        </div>
-        <div class="novedad-card">
-            <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80"
-                alt="Novedad 3" />
-            <div class="novedad-content">
-                <div class="novedad-title">Nuevo sistema de estacionamiento</div>
-                <div class="novedad-text">Más rápido, seguro y con pago digital.</div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
+}
