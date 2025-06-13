@@ -3,29 +3,56 @@
     ViewData["Title"] = "Listado de Vuelos";
 }
 
-<h1>@ViewData["Title"]</h1>
-<section class="vuelos-table-section">
-    <table class="vuelos-table">
-        <thead>
-            <tr>
-                <th>Aerolínea</th>
-                <th>Vuelo</th>
-                <th>Destino</th>
-                <th>Horario</th>
-                <th>Estado</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var vuelo in Model)
-            {
+<div class="banner" style="margin-bottom: 2rem;">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+</div>
+
+<div class="container-fluid">
+    <div class="d-flex justify-content-end mb-3">
+        <a class="btn btn-primary" asp-action="Create">Crear nuevo vuelo</a>
+    </div>
+    <div class="vuelos-table-section">
+        <table class="table table-hover shadow-sm rounded overflow-hidden" style="margin: 0 auto;">
+            <thead class="table-light">
                 <tr>
-                    <td>@vuelo.Aerolinea</td>
-                    <td>@vuelo.NumeroVuelo</td>
-                    <td>@vuelo.Destino</td>
-                    <td>@vuelo.FechaHora.ToString("HH:mm")</td>
-                    <td>@vuelo.Estado</td>
+                    <th class="fw-bold text-primary">Aerolínea</th>
+                    <th class="fw-bold text-primary">Número</th>
+                    <th class="fw-bold text-primary">Destino</th>
+                    <th class="fw-bold text-primary">Fecha/Hora</th>
+                    <th class="fw-bold text-primary">Estado</th>
+                    <th class="fw-bold text-primary">Última actualización</th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</section>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="align-middle">
+                        <td class="fw-semibold">@item.Aerolinea</td>
+                        <td>@item.NumeroVuelo</td>
+                        <td>@item.Destino</td>
+                        <td>@item.FechaHora.ToString("g")</td>
+                        <td>
+                            <span class="badge rounded-pill bg-info text-dark">@item.Estado</span>
+                        </td>
+                        <td><small class="text-muted">@item.UltimaActualizacion.ToString("g")</small></td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">
+                                    <i class="bi bi-eye"></i>
+                                </a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-warning">
+                                    <i class="bi bi-pencil"></i>
+                                </a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>

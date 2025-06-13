@@ -1,0 +1,23 @@
+@model AeropuertoConlara.Models.Vuelo
+@{
+    ViewData["Title"] = "Detalles del vuelo";
+}
+<div class="banner" style="margin-bottom: 2rem;">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+</div>
+<div class="container">
+<div class="vuelos-table-section" style="max-width: 600px; margin: 0 auto;">
+    <div class="novedad-card" style="box-shadow:none;">
+        <div class="novedad-content">
+            <div class="novedad-title mb-2">@Model.Aerolinea - @Model.NumeroVuelo</div>
+            <div class="mb-2"><strong>Destino:</strong> @Model.Destino</div>
+            <div class="mb-2"><strong>Fecha y hora:</strong> @Model.FechaHora.ToString("g")</div>
+            <div class="mb-2"><strong>Estado:</strong> <span class="badge bg-info text-dark">@Model.Estado</span></div>
+            <div class="mb-2"><strong>Última actualización:</strong> @Model.UltimaActualizacion.ToString("g")</div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end gap-2">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</div>

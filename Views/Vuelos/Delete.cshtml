@@ -1,0 +1,25 @@
+@model AeropuertoConlara.Models.Vuelo
+@{
+    ViewData["Title"] = "Eliminar vuelo";
+}
+<div class="banner" style="margin-bottom: 2rem;">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+</div>
+<div class="container">
+<div class="vuelos-table-section" style="max-width: 600px; margin: 0 auto;">
+    <div class="novedad-card" style="box-shadow:none;">
+        <div class="novedad-content">
+            <h3 class="mb-3 text-danger">¿Estás seguro que deseas eliminar este vuelo?</h3>
+            <div class="mb-2"><strong>Aerolínea:</strong> @Model.Aerolinea</div>
+            <div class="mb-2"><strong>Número de vuelo:</strong> @Model.NumeroVuelo</div>
+            <div class="mb-2"><strong>Destino:</strong> @Model.Destino</div>
+            <div class="mb-2"><strong>Fecha y hora:</strong> @Model.FechaHora.ToString("g")</div>
+            <div class="mb-2"><strong>Estado:</strong> <span class="badge bg-info text-dark">@Model.Estado</span></div>
+        </div>
+    </div>
+    <form asp-action="Delete" method="post" class="d-flex justify-content-end gap-2 mt-3">
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>

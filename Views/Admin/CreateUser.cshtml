@@ -1,10 +1,10 @@
 @{
-    ViewData["Title"] = "Acceso administrativo";
+    ViewData["Title"] = "Crear Usuario";
 }
 
 <div class="banner">
     <h1>@ViewData["Title"]</h1>
-    <p>Ingrese sus credenciales para acceder al panel de administración.</p>
+    <p>Complete el formulario para crear un nuevo usuario.</p>
 </div>
 
 <div class="container mt-4">
@@ -12,7 +12,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
-                    <form method="post" action="@Url.Action("Login", "Admin")">
+                    <form method="post" action="@Url.Action("CreateUser", "Admin")">
                         <div class="mb-3">
                             <label for="usuario" class="form-label">Usuario</label>
                             <input type="text" class="form-control" id="usuario" name="usuario" required>
@@ -21,14 +21,13 @@
                             <label for="password" class="form-label">Contraseña</label>
                             <input type="password" class="form-control" id="password" name="password" required>
                         </div>
-                        <button type="submit" class="btn btn-primary">Ingresar</button>
-                    </form>
-                    @if (!ViewData.ModelState.IsValid)
-                    {
-                        <div class="alert alert-danger mt-3">
-                            @Html.ValidationSummary(false)
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                                required>
                         </div>
-                    }
+                        <button type="submit" class="btn btn-primary">Crear Usuario</button>
+                    </form>
                 </div>
             </div>
         </div>

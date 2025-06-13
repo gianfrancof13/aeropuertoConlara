@@ -17,65 +17,85 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AeropuertoConlara
 build_property.RootNamespace = AeropuertoConlara
-build_property.ProjectDir = C:\Users\user\Documents\GitHub\AeropuertoConlara\
+build_property.ProjectDir = c:\Users\user\Documents\GitHub\AeropuertoConlara\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\user\Documents\GitHub\AeropuertoConlara
+build_property.MSBuildProjectDirectory = c:\Users\user\Documents\GitHub\AeropuertoConlara
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Admin/Login.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Admin/CreateUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Admin/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Admin/Panel.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Admin/Panel.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUGFuZWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Clima/Index.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Clima/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpbWFcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Formularios/Contacto.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Formularios/Contacto.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcQ29udGFjdG8uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Formularios/CursosEDA.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Formularios/CursosEDA.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRm9ybXVsYXJpb3NcQ3Vyc29zRURBLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Home/Index.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Home/Privacy.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/Error.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Index.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Vuelos/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVnVlbG9zXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/_ViewImports.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/_ViewStart.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/_Layout.cshtml]
+[c:/Users/user/Documents/GitHub/AeropuertoConlara/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-y8tqo7ukkf

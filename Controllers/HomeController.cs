@@ -5,26 +5,25 @@ using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
+using AeropuertoConlara.Data;
 
 namespace AeropuertoConlara.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var vuelos = new List<Vuelo>
-            {
-                new Vuelo { Id = 1, Aerolinea = "Aerolineas Argentinas", NumeroVuelo = "AR1234", Destino = "Buenos Aires", FechaHora = System.DateTime.Now.AddHours(1), Estado = "En horario" },
-                new Vuelo { Id = 2, Aerolinea = "Flybondi", NumeroVuelo = "FO5678", Destino = "Córdoba", FechaHora = System.DateTime.Now.AddHours(2), Estado = "Demorado" },
-                new Vuelo { Id = 3, Aerolinea = "JetSMART", NumeroVuelo = "JS9101", Destino = "Mendoza", FechaHora = System.DateTime.Now.AddHours(3), Estado = "Aterrizado" }
-            };
+            // Tomar los 6 vuelos más próximos ordenados por FechaHora
+            var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.FechaHora).Take(6).ToList());
 
             var noticiasService = new NoticiasSanLuisService();
             var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
@@ -42,6 +41,5 @@ namespace AeropuertoConlara.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
     }
 }
