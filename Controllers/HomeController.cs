@@ -27,7 +27,7 @@ namespace AeropuertoConlara.Controllers
             // Tomar los 6 vuelos más próximos ordenados por FechaHora
             var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.Fecha).Take(6).ToList());
 
-            try
+            /* try
             {
                 var noticiasService = new NoticiasSanLuisService();
                 var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
@@ -37,7 +37,7 @@ namespace AeropuertoConlara.Controllers
             {
                 _logger.LogError(ex, "Error al obtener noticias de San Luis");
                 ViewBag.NoticiasSanLuis = new List<NoticiaSanLuis>();
-            }
+            } */
 
             return View(vuelos);
         }
