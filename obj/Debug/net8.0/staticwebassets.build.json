@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7TSLfktjVMVzaz1rW2+JLYiCUlTbl8w2P+i3h3wQmm0=",
+  "Hash": "3uzN2hESezSupM3KDEjNGmT83SJhrwAHC6zoPCwPWsI=",
   "Source": "AeropuertoConlara",
   "BasePath": "_content/AeropuertoConlara",
   "Mode": "Default",
@@ -73,8 +73,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "m4xjy3b48z",
-      "Integrity": "dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=",
+      "Fingerprint": "bv5zpse5a5",
+      "Integrity": "iS4UP7QojWb1APnnjVK/+KCyXjj8IZs+8UzOM5PxOms=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1527,6 +1527,51 @@
       ]
     },
     {
+      "Route": "css/site.bv5zpse5a5.css",
+      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "9172"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"iS4UP7QojWb1APnnjVK/+KCyXjj8IZs+8UzOM5PxOms=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 19 Jun 2025 18:17:23 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bv5zpse5a5"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-iS4UP7QojWb1APnnjVK/+KCyXjj8IZs+8UzOM5PxOms="
+        }
+      ]
+    },
+    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1537,7 +1582,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "6718"
+          "Value": "9172"
         },
         {
           "Name": "Content-Type",
@@ -1545,11 +1590,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=\""
+          "Value": "\"iS4UP7QojWb1APnnjVK/+KCyXjj8IZs+8UzOM5PxOms=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 16:59:46 GMT"
+          "Value": "Thu, 19 Jun 2025 18:17:23 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1559,52 +1604,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck="
-        }
-      ]
-    },
-    {
-      "Route": "css/site.m4xjy3b48z.css",
-      "AssetFile": "C:\\Users\\user\\Documents\\GitHub\\AeropuertoConlara\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "6718"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 13 Jun 2025 16:59:46 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "m4xjy3b48z"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-dixoNpLK0JIOQgnDcJ54XiD6rfYHsdmV7PHpD4f0Bck="
+          "Value": "sha256-iS4UP7QojWb1APnnjVK/+KCyXjj8IZs+8UzOM5PxOms="
         }
       ]
     },

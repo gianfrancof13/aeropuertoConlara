@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Linq;
 using AeropuertoConlara.Data;
 using Microsoft.AspNetCore.Diagnostics;
+using AeropuertoConlara.Services;
 
 namespace AeropuertoConlara.Controllers
 {
@@ -26,9 +27,18 @@ namespace AeropuertoConlara.Controllers
             // Tomar los 6 vuelos más próximos ordenados por FechaHora
             var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.Fecha).Take(6).ToList());
 
-            /* var noticiasService = new NoticiasSanLuisService();
-            var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
-            ViewBag.NoticiasSanLuis = noticias; */
+            try
+            {
+                var noticiasService = new NoticiasSanLuisService();
+                var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
+                ViewBag.NoticiasSanLuis = noticias;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error al obtener noticias de San Luis");
+                ViewBag.NoticiasSanLuis = new List<NoticiaSanLuis>();
+            }
+
             return View(vuelos);
         }
 

@@ -19,29 +19,31 @@
 
 <section class="vuelos-table-section">
     <h2>Partidas</h2>
-    <table class="vuelos-table">
-        <thead>
-            <tr>
-                <th>Ruta</th>
-                <th>Vuelo</th>
-                <th>Hora de Arribo</th>
-                <th>Hora de Partida</th>
-                <th>Fecha</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var vuelo in Model)
-            {
+    <div class="table-responsive">
+        <table class="vuelos-table">
+            <thead>
                 <tr>
-                    <td>@vuelo.Ruta</td>
-                    <td>@vuelo.NumeroVuelo</td>
-                    <td>@vuelo.HoraArribo.ToString(@"hh\:mm")</td>
-                    <td>@vuelo.HoraPartida.ToString(@"hh\:mm")</td>
-                    <td>@vuelo.Fecha.ToString("dd/MM/yyyy")</td>
+                    <th>Ruta</th>
+                    <th>Vuelo</th>
+                    <th>Hora de Arribo</th>
+                    <th>Hora de Partida</th>
+                    <th>Fecha</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var vuelo in Model)
+                {
+                    <tr>
+                        <td>@vuelo.Ruta</td>
+                        <td>@vuelo.NumeroVuelo</td>
+                        <td>@vuelo.HoraArribo.ToString(@"hh\:mm")</td>
+                        <td>@vuelo.HoraPartida.ToString(@"hh\:mm")</td>
+                        <td>@vuelo.Fecha.ToString("dd/MM/yyyy")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </section>
 
 <section class="quick-access" style="position: relative;">
@@ -124,7 +126,7 @@
 
 <div class="modal fade" id="serviciosAerocomercialesModal" tabindex="-1"
     aria-labelledby="serviciosAerocomercialesModalLabel" aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="serviciosAerocomercialesModalLabel">Servicios aerocomerciales</h5>
@@ -153,7 +155,7 @@
 
 <div class="modal fade" id="datosAeronauticosModal" tabindex="-1" aria-labelledby="datosAeronauticosModalLabel"
     aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="datosAeronauticosModalLabel">Datos aeronáuticos</h5>
@@ -210,7 +212,7 @@
 
 <div class="modal fade" id="localesModal" tabindex="-1" aria-labelledby="localesModalLabel" aria-hidden="true"
     style="display: none;">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="localesModalLabel">Sistema Nacional de Aeropuertos y EDA</h5>
@@ -238,7 +240,7 @@
     </div>
 </div>
 
-@* @if (ViewBag.NoticiasSanLuis != null && ((List<NoticiaSanLuis>)ViewBag.NoticiasSanLuis).Any())
+@if (ViewBag.NoticiasSanLuis != null && ((List<NoticiaSanLuis>)ViewBag.NoticiasSanLuis).Any())
 {
     <section class="novedades-section">
         <h2>Noticias Aeropuertos de San Luis</h2>
@@ -261,4 +263,4 @@
             }
         </div>
     </section>
-} *@
+}
