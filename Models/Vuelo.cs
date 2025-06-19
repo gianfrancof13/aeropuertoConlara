@@ -12,7 +12,7 @@ namespace AeropuertoConlara.Models
 
         [Required(ErrorMessage = "El número de vuelo es obligatorio")]
         [Display(Name = "Número de Vuelo")]
-        public string NumeroVuelo { get; set; }
+        public string NumeroVuelo { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "La hora de arribo es obligatoria")]
         [Display(Name = "Hora de Arribo")]
@@ -24,14 +24,14 @@ namespace AeropuertoConlara.Models
 
         [Required(ErrorMessage = "La ruta es obligatoria")]
         [Display(Name = "Ruta")]
-        public string Ruta { get; set; }
+        public string Ruta { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El equipo es obligatorio")]
         [Display(Name = "Equipo")]
-        public string Equipo { get; set; }
+        public string Equipo { get; set; } = string.Empty;
 
         [Required(ErrorMessage = "El TA es obligatorio")]
         [Display(Name = "TA")]
-        public string TA { get; set; }
+        public string TA { get; set; } = string.Empty;
     }
 }

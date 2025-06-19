@@ -23,7 +23,7 @@ namespace AeropuertoConlara.Controllers
         [HttpGet]
         public IActionResult Login()
         {
-            if (User.Identity.IsAuthenticated)
+            if (User.Identity!.IsAuthenticated)
             {
                 return RedirectToAction("Panel");
             }
@@ -89,7 +89,7 @@ namespace AeropuertoConlara.Controllers
             var existeUsuario = await _context.Usuarios.AnyAsync();
 
             // Si no es el primer usuario, verificar que el usuario actual sea administrador
-            if (existeUsuario && (!User.Identity.IsAuthenticated || !User.IsInRole("Admin")))
+            if (existeUsuario && (!User.Identity!.IsAuthenticated || !User.IsInRole("Admin")))
             {
                 return RedirectToAction("Login");
             }
@@ -175,7 +175,7 @@ namespace AeropuertoConlara.Controllers
         [HttpGet]
         public IActionResult Panel()
         {
-            if (!User.Identity.IsAuthenticated)
+            if (!User.Identity!.IsAuthenticated)
             {
                 return RedirectToAction("Login");
             }

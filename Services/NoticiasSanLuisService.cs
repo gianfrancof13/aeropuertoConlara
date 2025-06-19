@@ -1,10 +1,10 @@
-using HtmlAgilityPack;
+/* using HtmlAgilityPack;
 
 public class NoticiaSanLuis
 {
-    public string Titulo { get; set; }
-    public string Url { get; set; }
-    public string Imagen { get; set; }
+    public string Titulo { get; set; } = string.Empty;
+    public string Url { get; set; } = string.Empty;
+    public string Imagen { get; set; } = string.Empty;
 }
 
 public class NoticiasSanLuisService
@@ -18,15 +18,15 @@ public class NoticiasSanLuisService
         var doc = await web.LoadFromWebAsync(Url);
 
         // Buscar todas las cards de noticias
-        var cards = doc.DocumentNode.SelectNodes("//div[contains(@class,'card') and .//h4[contains(@class,'card-title')]]");
+        var cards = doc.DocumentNode.SelectNodes("//div[contains(@class,'card')]");
         if (cards != null)
         {
-            foreach (var card in cards.Take(4)) // Solo las 4 primeras
+            foreach (var card in cards)
             {
-                var linkNode = card.SelectSingleNode(".//a[contains(@href,'agenciasanluis.com') and .//h4[contains(@class,'card-title')]]");
+                var linkNode = card.SelectSingleNode(".//a[contains(@href,'agenciasanluis.com')]");
                 var titleNode = card.SelectSingleNode(".//h4[contains(@class,'card-title')]");
                 var imgNode = card.SelectSingleNode(".//img");
-                string imagen = imgNode?.GetAttributeValue("src", null);
+                string imagen = imgNode?.GetAttributeValue("src", string.Empty) ?? string.Empty;
                 if (linkNode != null && titleNode != null)
                 {
                     var titulo = titleNode.InnerText.Trim();
@@ -47,9 +47,13 @@ public class NoticiasSanLuisService
                     {
                         noticias.Add(new NoticiaSanLuis { Titulo = titulo, Url = href, Imagen = imagen });
                     }
+
+                    // Si ya tenemos 4 noticias, salimos del bucle
+                    if (noticias.Count >= 3)
+                        break;
                 }
             }
         }
         return noticias;
     }
-}
+} */

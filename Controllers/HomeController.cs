@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using AeropuertoConlara.Data;
+using Microsoft.AspNetCore.Diagnostics;
 
 namespace AeropuertoConlara.Controllers
 {
@@ -25,9 +26,9 @@ namespace AeropuertoConlara.Controllers
             // Tomar los 6 vuelos más próximos ordenados por FechaHora
             var vuelos = await Task.Run(() => _context.Vuelos.OrderBy(v => v.Fecha).Take(6).ToList());
 
-            var noticiasService = new NoticiasSanLuisService();
+            /* var noticiasService = new NoticiasSanLuisService();
             var noticias = await noticiasService.ObtenerUltimasNoticiasAsync();
-            ViewBag.NoticiasSanLuis = noticias;
+            ViewBag.NoticiasSanLuis = noticias; */
             return View(vuelos);
         }
 
@@ -39,7 +40,14 @@ namespace AeropuertoConlara.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var error = HttpContext.Features.Get<IExceptionHandlerFeature>();
+            var errorMessage = error?.Error?.Message ?? "Ha ocurrido un error inesperado.";
+
+            return View(new ErrorViewModel
+            {
+                RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                ErrorMessage = errorMessage
+            });
         }
     }
 }

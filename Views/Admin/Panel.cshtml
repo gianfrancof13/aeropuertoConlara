@@ -16,7 +16,7 @@
                         <i class="fas fa-user-circle me-2"></i>Información del Usuario
                     </h5>
                     <div class="mt-3">
-                        <p class="mb-2"><strong>Usuario:</strong> @User.Identity.Name</p>
+                        <p class="mb-2"><strong>Usuario:</strong> @User.Identity!.Name</p>
                         <p class="mb-2"><strong>Rol:</strong> @User.Claims.FirstOrDefault(c => c.Type ==
                             System.Security.Claims.ClaimTypes.Role)?.Value</p>
                         <p class="mb-2"><strong>Último acceso:</strong> @DateTime.Now.ToString("dd/MM/yyyy HH:mm")</p>
